@@ -1,7 +1,6 @@
 package ru.practicum.shareit.user.controller;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +16,6 @@ import ru.practicum.shareit.user.service.UserService;
 import javax.validation.Valid;
 import java.util.List;
 
-@Slf4j
 @Validated
 @RestController
 @RequiredArgsConstructor
