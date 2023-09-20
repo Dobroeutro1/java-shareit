@@ -11,6 +11,7 @@ import ru.practicum.shareit.exeption.AccessException;
 import ru.practicum.shareit.exeption.AvailableException;
 import ru.practicum.shareit.exeption.BookingItemByOwnerException;
 import ru.practicum.shareit.exeption.NotFoundException;
+import ru.practicum.shareit.exeption.PageableParamsException;
 import ru.practicum.shareit.exeption.StateException;
 import ru.practicum.shareit.exeption.ValidationException;
 
@@ -54,7 +55,8 @@ public class ErrorHandler {
         return new ErrorResponse("Validation error: " + errorMessage);
     }
 
-    @ExceptionHandler({ValidationException.class, AvailableException.class, StateException.class, AvailableException.class})
+    @ExceptionHandler({ValidationException.class, AvailableException.class, StateException.class,
+            PageableParamsException.class})
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ErrorResponse handleBadRequestException(final Exception e) {
         log.error("Available error. Status 400! {}", e.getMessage(), e);
