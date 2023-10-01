@@ -29,7 +29,7 @@ public class ItemController {
 
     private final ItemClient itemClient;
 
-    @GetMapping()
+    @GetMapping
     public ResponseEntity<Object> findByUserId(@RequestHeader(name = HttpHeaders.USER_ID_HEADER) Long userId,
                                                @PositiveOrZero @RequestParam(defaultValue = "0") Integer from,
                                                @Positive @RequestParam(defaultValue = "10") Integer size) {
@@ -48,7 +48,7 @@ public class ItemController {
         return itemClient.search(text, from, size);
     }
 
-    @PostMapping()
+    @PostMapping
     public ResponseEntity<Object> create(@RequestHeader(name = HttpHeaders.USER_ID_HEADER) Long userId,
                           @Valid @RequestBody ItemDto itemDto) {
         return itemClient.create(userId, itemDto);
